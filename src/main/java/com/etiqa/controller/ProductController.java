@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.etiqa.service.CustomerService;
+import com.etiqa.service.ProductService;
 
 @RestController
 @RequestMapping("")
@@ -15,6 +15,6 @@ public class ProductController {
     private final Logger log = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
-    private CustomerService customerService;
+    private ProductService productService;
     
 }
