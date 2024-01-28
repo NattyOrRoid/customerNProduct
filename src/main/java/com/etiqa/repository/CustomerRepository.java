@@ -3,11 +3,11 @@ package com.etiqa.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.etiqa.domain.Customer;
-import java.util.List;
+import java.util.Optional;
 
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-    List<Customer> findByFNameAndLName(String fName, String lName);
+    Optional<Customer> findByFNameAndLName(String fName, String lName);
     
 }
