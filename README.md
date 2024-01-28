@@ -1,6 +1,10 @@
 # Manage Customer & Product
 This project is for managing customer & product (book)
 
+# How to run
+- mvn clean
+- mvn spring-boot:run
+
 # Database
 We are using PostgreSQL and there's only 2 table include: `Customer` & `Product`
 - port: localhost:5432/etiqa
