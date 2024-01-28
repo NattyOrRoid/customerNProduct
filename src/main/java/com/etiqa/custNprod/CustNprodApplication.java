@@ -10,6 +10,7 @@ import com.etiqa.custNprod.controller.ProductController;
 @SpringBootApplication
 @ComponentScan(basePackageClasses = CustomerController.class)
 @ComponentScan(basePackageClasses = ProductController.class)
+@ComponentScan("com.etiqa.custNprod")
 public class CustNprodApplication {
 
 	public static void main(String[] args) {
