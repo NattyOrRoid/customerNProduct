@@ -14,15 +14,15 @@ import lombok.Setter;
 public class Customer {
     @Id
     private long id;
-    @Column(name = "First Name")
+    @Column(name = "first_name", length =  100)
     private String fName;
-    @Column(name = "Last Name")
+    @Column(name = "last_name", length =  100)
     private String lName;
-    @Column(name = "Office Mail")
+    @Column(name = "office_email", unique = true, length = 254)
     private String officeMail;
-    @Column(name = "Personal Mail")
+    @Column(name = "personal_email", unique = true, length = 254)
     private String personalMail;
-    @Column(name = "Family Member")
+    @Column(name = "family_member", length = 254)
     private String famMember;
     
 }

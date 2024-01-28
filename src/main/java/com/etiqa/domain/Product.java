@@ -14,13 +14,13 @@ import lombok.Setter;
 public class Product {
     @Id
     private long id;
-    @Column(name = "Book Title")
+    @Column(name = "book_title", length = 100)
     private String title;
-    @Column(name = "Book Auhtor")
+    @Column(name = "book_author", length = 100)
     private String author;
-    @Column(name = "Book Price")
+    @Column(name = "book_price")
     private float price;
-    @Column(name = "Book Quantity")
+    @Column(name = "book_quantity")
     private int quantity;
     
 }
