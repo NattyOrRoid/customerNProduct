@@ -17,7 +17,7 @@ The API provides the following endpoints to manage customers, before integrate n
 - `/customerRegistration`
   -  Method: `POST`
     - Request Body: `{First_Name, Last_Name, Email (Office, Personal), Family Members.}`
-    - Explanation: This endpoint is used to register new customer . It will return a response with the status of the request if successful. If the customer already exist, exception will be thrown.
+    - Explanation: This endpoint is used to register new customer . It will return a response with the status of the request if successful. If the customer already exist based on the email (personal or office), exception will be thrown.
 
 - `/customer`
   -  Method: `GET`
