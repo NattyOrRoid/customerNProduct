@@ -26,9 +26,11 @@ public class CustomerService {
 
     public void customerData(CustomerDTO customerDTO) {
         
-        Optional<Customer> existCust = customerRepository.findByFNameAndLName(customerDTO.getFName(), customerDTO.getLName());
+        Optional<Customer> existpersonalMail = customerRepository.findBypersonalMail(customerDTO.getPersonalMail());
 
-        if(existCust.isPresent()) {
+        Optional<Customer> existofficeMail = customerRepository.findBypersonalMail(customerDTO.getOfficeMail());
+
+        if(existpersonalMail.isPresent() || existofficeMail.isPresent()) {
             throw new ExceptionHandler("Customer already exist");
         }
 
