@@ -1,4 +1,4 @@
-package com.etiqa.helper;
+package com.etiqa.custNprod.helper;
 
 public class ExceptionHandler extends RuntimeException {
     

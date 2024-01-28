@@ -1,4 +1,4 @@
-package com.etiqa.service.dto;
+package com.etiqa.custNprod.service.dto;
 
 import lombok.Getter;
 import lombok.Setter;

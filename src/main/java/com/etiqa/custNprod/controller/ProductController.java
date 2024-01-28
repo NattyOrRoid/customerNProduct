@@ -1,4 +1,4 @@
-package com.etiqa.controller;
+package com.etiqa.custNprod.controller;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.etiqa.domain.Product;
-import com.etiqa.service.ProductService;
-import com.etiqa.service.dto.ProductDTO;
+import com.etiqa.custNprod.domain.Product;
+import com.etiqa.custNprod.service.ProductService;
+import com.etiqa.custNprod.service.dto.ProductDTO;
 
 import jakarta.validation.Valid;
 

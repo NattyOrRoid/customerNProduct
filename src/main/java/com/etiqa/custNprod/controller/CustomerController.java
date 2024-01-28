@@ -1,4 +1,4 @@
-package com.etiqa.controller;
+package com.etiqa.custNprod.controller;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import com.etiqa.domain.Customer;
-import com.etiqa.service.CustomerService;
-import com.etiqa.service.dto.CustomerDTO;
+import com.etiqa.custNprod.domain.Customer;
+import com.etiqa.custNprod.service.CustomerService;
+import com.etiqa.custNprod.service.dto.CustomerDTO;
 
 import jakarta.validation.Valid;
 

@@ -1,8 +1,8 @@
-package com.etiqa.repository;
+package com.etiqa.custNprod.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.etiqa.domain.Customer;
+import com.etiqa.custNprod.domain.Customer;
 import java.util.Optional;
 
 

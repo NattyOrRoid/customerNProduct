@@ -1,4 +1,4 @@
-package com.etiqa.service;
+package com.etiqa.custNprod.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.etiqa.domain.Product;
-import com.etiqa.helper.ExceptionHandler;
-import com.etiqa.repository.ProductRepository;
-import com.etiqa.service.dto.ProductDTO;
+import com.etiqa.custNprod.domain.Product;
+import com.etiqa.custNprod.helper.ExceptionHandler;
+import com.etiqa.custNprod.repository.ProductRepository;
+import com.etiqa.custNprod.service.dto.ProductDTO;
 
 @Service
 public class ProductService {

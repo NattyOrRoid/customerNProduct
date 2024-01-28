@@ -1,4 +1,4 @@
-package com.etiqa.domain;
+package com.etiqa.custNprod.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
