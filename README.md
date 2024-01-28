@@ -4,8 +4,8 @@ This project is for managing customer & product (book)
 # Database
 We are using PostgreSQL and there's only 2 table include: `Customer` & `Product`
 - port: localhost:5432/etiqa
-- Username: etiqa
-- Password: etiqa123
+- Username: postgres
+- Password: Need to set your local password
 
 # Module
 ## Customer Endpoint
