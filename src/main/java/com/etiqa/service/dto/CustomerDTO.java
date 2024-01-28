@@ -11,4 +11,5 @@ public class CustomerDTO {
     private String lName;
     private String officeMail;
     private String personalMail;
+    private String famMember;
 }
