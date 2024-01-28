@@ -32,7 +32,7 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PostMapping("customerRegistration")
+    @PostMapping("/customerRegistration")
     @ResponseStatus(HttpStatus.CREATED)
     public void customerData(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("REST request to create customer {}", customerDTO);

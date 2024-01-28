@@ -32,7 +32,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping("bookRegistration")
+    @PostMapping("/bookRegistration")
     @ResponseStatus(HttpStatus.CREATED)
     public void bookData(@Valid @RequestBody ProductDTO productDTO) {
         log.info("REST request to create book {}", productDTO);
