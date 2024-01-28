@@ -32,7 +32,7 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @PutMapping("customerRegistration")
+    @PostMapping("customerRegistration")
     @ResponseStatus(HttpStatus.CREATED)
     public void customerData(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("REST request to create customer {}", customerDTO);
@@ -51,6 +51,7 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Customer> getCustomerData(@Valid @PathVariable Long id) {
         log.info("REST request to find Customer By Id {}", id);
 
@@ -59,24 +60,22 @@ public class CustomerController {
         return ResponseEntity.ok(cust);
     }
 
-    @PostMapping("/customer/{id}")
+    @PutMapping("/customer/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Customer> updateCustomerData(@Valid @PathVariable Long id) {
-        log.info("REST request to update Customer By Id {}", id);
+    public ResponseEntity<Customer> updateCustomerData(@Valid @PathVariable CustomerDTO customerDTO) {
+        log.info("REST request to update Customer By Id {}", customerDTO.getId());
 
-        Customer cust = customerService.deleteCustomerData(id) ;
+        Customer cust = customerService.updateCustomerData(customerDTO) ;
 
         return ResponseEntity.ok(cust);
     }
 
     @DeleteMapping("/customer/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Customer> deleteCustomerData(@Valid @PathVariable Long id) {
+    public void deleteCustomerData(@Valid @PathVariable Long id) {
         log.info("REST request to delete Customer By Id {}", id);
 
-        Customer cust = customerService.deleteCustomerData(id) ;
-
-        return ResponseEntity.ok(cust);
+        customerService.deleteCustomerData(id) ;
     }
 
 }
