@@ -39,6 +39,7 @@ public class CustomerService {
         cust.setLName(customerDTO.getLName());
         cust.setPersonalMail(customerDTO.getPersonalMail());
         cust.setOfficeMail(customerDTO.getOfficeMail());
+        cust.setFamMember(customerDTO.getFamMember());
     }
 
     public Customer updateCustomerData(CustomerDTO customerDTO) {
@@ -51,6 +52,7 @@ public class CustomerService {
         cust.setLName(customerDTO.getLName());
         cust.setPersonalMail(customerDTO.getPersonalMail());
         cust.setOfficeMail(customerDTO.getOfficeMail());
+        cust.setFamMember(customerDTO.getFamMember());
 
         return cust;
     }
