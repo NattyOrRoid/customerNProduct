@@ -1,9 +1,15 @@
 # Manage Customer & Product
 This project is for managing customer & product (book)
 
+# Database
+We are using PostgreSQL and there's only 2 table include: `Customer` & `Product`
+port: localhost:5432/etiqa
+Username: etiqa
+Password: etiqa123
+
 # Module
 ## Customer Endpoint
-The API provides the following endpoints to manage customers, before integrate need to include (/custAPI) before:
+The API provides the following endpoints to manage customers, before integrate need to include `(/custAPI)` before:
 - `/customerRegistration`
   -  Method: `POST`
     - Request Body: `{First_Name, Last_Name, Email (Office, Personal), Family Members.}`
@@ -29,7 +35,7 @@ The API provides the following endpoints to manage customers, before integrate n
     - Explanation: This endpoint is used to delete customer data based on id. It will return a response with the status of the request. If customer can't be found, exception will be thrown.
 
 ## Product Endpoint
-The API provides the following endpoints to manage books, before integrate need to include (/prodAPI) before:
+The API provides the following endpoints to manage books, before integrate need to include `(/prodAPI)` before:
 - `/bookRegistration`
   -  Method: `POST`
     - Request Body: `{Book_Title, Book_Price, Author, Book_Quantity.}`
@@ -53,3 +59,7 @@ The API provides the following endpoints to manage books, before integrate need 
     -  Method: `DELETE`
     - Request Body: `{id}`
     - Explanation: This endpoint is used to delete book data based on id. It will return a response with the status of the request. If book can't be found, exception will be thrown.
+
+# Testing
+We are using Swagger V3 where you can access using following link:
+localhost:8080/swagger-ui.html
