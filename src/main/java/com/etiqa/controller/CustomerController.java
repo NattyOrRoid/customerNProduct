@@ -1,5 +1,7 @@
 package com.etiqa.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +14,17 @@ import com.etiqa.domain.Customer;
 import com.etiqa.service.CustomerService;
 import com.etiqa.service.dto.CustomerDTO;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
-@RequestMapping("")
+@RequestMapping("/custAPI")
 public class CustomerController {
 
     private final Logger log = LoggerFactory.getLogger(CustomerController.class);
@@ -28,17 +34,47 @@ public class CustomerController {
 
     @PutMapping("customerRegistration")
     @ResponseStatus(HttpStatus.CREATED)
-    public void customerData(@RequestBody CustomerDTO customerDTO) {
+    public void customerData(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("REST request to create customer {}", customerDTO);
 
         customerService.customerData(customerDTO);
     }
 
+    @GetMapping("/customer")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Customer> getAllCustomerData() {
+        log.info("REST request to find all Customer {}");
+
+        List<Customer> cust = customerService.getAllCustomerData() ;
+
+        return cust;
+    }
+
     @GetMapping("/customer/{id}")
-    public ResponseEntity<Customer> getCustomerData(@PathVariable Long id) {
+    public ResponseEntity<Customer> getCustomerData(@Valid @PathVariable Long id) {
         log.info("REST request to find Customer By Id {}", id);
 
         Customer cust = customerService.getCustomerData(id) ;
+
+        return ResponseEntity.ok(cust);
+    }
+
+    @PostMapping("/customer/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Customer> updateCustomerData(@Valid @PathVariable Long id) {
+        log.info("REST request to update Customer By Id {}", id);
+
+        Customer cust = customerService.deleteCustomerData(id) ;
+
+        return ResponseEntity.ok(cust);
+    }
+
+    @DeleteMapping("/customer/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<Customer> deleteCustomerData(@Valid @PathVariable Long id) {
+        log.info("REST request to delete Customer By Id {}", id);
+
+        Customer cust = customerService.deleteCustomerData(id) ;
 
         return ResponseEntity.ok(cust);
     }
