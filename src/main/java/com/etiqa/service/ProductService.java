@@ -39,6 +39,7 @@ public class ProductService {
 
         Product book = new Product();
         book.setTitle(productDTO.getTitle());
+        book.setAuthor(productDTO.getAuthor());
         book.setPrice(productDTO.getPrice());
         book.setQuantity(productDTO.getQuantity());
     }

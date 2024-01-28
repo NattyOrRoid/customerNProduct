@@ -2,6 +2,8 @@ package com.etiqa.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +26,9 @@ public class CustomerService {
 
     public void customerData(CustomerDTO customerDTO) {
         
-        Customer existCust = customerRepository.findByFNameAndLName(customerDTO.getFName(), customerDTO.getLName());
+        Optional<Customer> existCust = customerRepository.findByFNameAndLName(customerDTO.getFName(), customerDTO.getLName());
 
-        if(existCust != null) {
+        if(existCust.isPresent()) {
             throw new ExceptionHandler("Customer already exist");
         }
 
